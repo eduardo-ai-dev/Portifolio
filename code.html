@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eduardo Sousa Araujo dos Santos | Portfólio</title>
+<style>
+        :root {
+            --bg-color: #09090b;
+            --card-bg: #18181b;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        /* Header / Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        section {
+            padding: 8rem 0 5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding-top: 14rem;
+            padding-bottom: 8rem;
+            overflow: visible;
+        }
+        /* Hero Background Glow */
+        .hero-glow {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, rgba(59, 130, 246, 0.12) 40%, rgba(9, 9, 11, 0) 70%);
+            filter: blur(50px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        /* Tech Badge Flutuante */
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1.1rem;
+            border-radius: 9999px;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            color: #67e8f9;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.75rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+        }
+        .tech-badge .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22d3ee;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22d3ee;
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+        .hero h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, #ffffff 30%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .hero h2 {
+            font-size: 1.3rem;
+            color: var(--accent-cyan);
+            font-weight: 500;
+            margin-bottom: 1.75rem;
+            letter-spacing: 0.01em;
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 3rem auto;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.75rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(59, 130, 246, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(6, 182, 212, 0.5);
+            filter: brightness(1.05);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(6, 182, 212, 0.6);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.25);
+        }
+        /* Seções Gerais */
+        h2.section-title {
+            font-size: 2.2rem;
+            margin-bottom: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+        }
+        /* Sobre Mim Card Glassmorphism */
+        .glass-card-about {
+            background: linear-gradient(135deg, rgba(24, 24, 27, 0.75), rgba(18, 18, 22, 0.85));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 16px;
+            padding: 2.75rem 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(6, 182, 212, 0.06);
+            max-width: 900px;
+        }
+        .glass-card-about p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        /* Grid de Cards */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 2.25rem;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+        }
+        .card h3 {
+            margin-bottom: 0.85rem;
+            font-size: 1.3rem;
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin-bottom: 1.75rem;
+            line-height: 1.65;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+        .tag {
+            font-size: 0.8rem;
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--accent-cyan);
+            padding: 0.3rem 0.85rem;
+            border-radius: 20px;
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            font-weight: 500;
+        }
+        /* AI Flow */
+        .ai-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 3rem 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+        .ai-step {
+            flex: 1;
+            min-width: 150px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            font-size: 1.05rem;
+        }
+        /* Contato */
+        #contato p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+            color: var(--accent-cyan);
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero { padding-top: 11rem; padding-bottom: 5rem; }
+            .hero h1 { font-size: 2.3rem; }
+            .glass-card-about { padding: 2rem 1.5rem; }
+            .ai-flow { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; }
+            .cta-buttons { flex-direction: column; align-items: stretch; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<header>
+<div class="logo">Eduardo Santos</div>
+<nav>
+<ul>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#habilidades">Habilidades</a></li>
+<li><a href="#projetos">Projetos</a></li>
+<li><a href="#ia">Inteligência Artificial</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-glow"></div>
+<div class="tech-badge">
+<span class="dot"></span>
+<span>⚡ Disponível para novos projetos &amp; desafios</span>
+</div>
+<h1>Eduardo Sousa Araujo dos Santos</h1>
+<h2>Desenvolvedor Front-End | Python | Java | Inteligência Artificial</h2>
+<p>Construindo soluções escaláveis, automações inteligentes e interfaces modernas focadas na experiência do usuário e alta performance.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="#projetos">Ver Projetos</a>
+<a class="btn btn-secondary" href="#habilidades">Conheça minhas habilidades</a>
+<a class="btn btn-secondary" href="#contato">Entre em contato</a>
+</div>
+</section>
+<section id="sobre">
+<h2 class="section-title">Sobre Mim</h2>
+<div class="glass-card-about">
+<p>
+                    Desenvolvedor em constante evolução com forte foco prático em programação, desenvolvimento web, criação de APIs, automação de processos e integração com ferramentas de Inteligência Artificial. Busco transformar problemas complexos em aplicações eficientes, limpas e orientadas a resultados.
+                </p>
+</div>
+</section>
+<section id="habilidades">
+<h2 class="section-title">Habilidades Técnicas</h2>
+<div class="grid-cards">
+<div class="card">
+<h3>Desenvolvimento Web</h3>
+<div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
+<p>Criação de interfaces responsivas, dinâmicas e estruturadas. Projetos incluem Jogo da Cobrinha, Jogo de Carro 2D e Chatbot UI via API.</p>
+</div>
+<div class="card">
+<h3>Python &amp; Lógica</h3>
+<div class="tags"><span class="tag">Python</span><span class="tag">APIs</span><span class="tag">Automação</span></div>
+<p>Desenvolvimento de scripts, lógica de programação e integrações. Projetos como Pedra, Papel e Tesoura e Sorteio da Mega-Sena.</p>
+</div>
+<div class="card">
+<h3>Java</h3>
+<div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Componentes</span></div>
+<p>Estudos avançados de lógica e construção de aplicações, incluindo relógios digitais (estilo romano e moderno).</p>
+</div>
+</div>
+</section>
+<section id="projetos">
+<h2 class="section-title">Projetos em Destaque</h2>
+<div class="grid-cards">
+<div class="card">
+<h3>Interface ChatGPT API</h3>
+<div class="tags"><span class="tag">JavaScript</span><span class="tag">API OpenAI/Groq</span></div>
+<p>Aplicação web interativa conectada a modelos de IA para chat em tempo real.</p>
+<a class="btn btn-secondary" href="https://github.com/eduardo-ai-dev" style="font-size: 0.85rem; padding: 0.5rem 1.1rem;" target="_blank">Ver Código</a>
+</div>
+<div class="card">
+<h3>Automação com Python</h3>
+<div class="tags"><span class="tag">Python</span><span class="tag">Automação</span></div>
+<p>Scripts voltados à otimização de rotinas e processamento automatizado de dados.</p>
+<a class="btn btn-secondary" href="https://github.com/eduardo-ai-dev" style="font-size: 0.85rem; padding: 0.5rem 1.1rem;" target="_blank">Ver Código</a>
+</div>
+</div>
+</section>
+<section id="ia">
+<h2 class="section-title">Inteligência Artificial Aplicada</h2>
+<div class="ai-flow">
+<div class="ai-step">Prompt Engineering</div>
+<div>➔</div>
+<div class="ai-step">APIs (Groq/OpenAI)</div>
+<div>➔</div>
+<div class="ai-step">Chatbots &amp; Streamlit</div>
+<div>➔</div>
+<div class="ai-step">RAG &amp; Automação</div>
+</div>
+</section>
+<section id="contato">
+<h2 class="section-title">Contato</h2>
+<p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 650px;">Vamos construir algo extraordinário juntos? Entre em contato através das minhas redes abaixo.</p>
+<div class="cta-buttons" style="justify-content: flex-start;">
+<a class="btn btn-primary" href="https://github.com/eduardo-ai-dev" target="_blank">GitHub</a>
+<a class="btn btn-secondary" href="https://linkedin.com" target="_blank">LinkedIn</a>
+</div>
+</section>
+</main>
+<footer>
+<p>© 2026 Eduardo Sousa Araujo dos Santos. Todos os direitos reservados. | <a href="https://github.com/eduardo-ai-dev" target="_blank">github.com/eduardo-ai-dev</a></p>
+</footer>
+</body></html>
